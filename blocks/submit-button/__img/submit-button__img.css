@@ -1,0 +1,7 @@
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 700px) {
+  .submit-button__img {
+    width: 200px;
+    height: 40px;
+  }
+}
