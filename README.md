@@ -1,5 +1,5 @@
 # Место
-Address: https://sia-kutyreva.github.io/russian-travel/.
+Address: https://sia-kutyreva.github.io/mesto/index.html
 
 Учебный проект на базе курса __Вэб-разработчик__ от __Яндекс Практикум__.
 
