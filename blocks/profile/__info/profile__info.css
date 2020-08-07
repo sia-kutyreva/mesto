@@ -4,7 +4,7 @@
   font-style: normal;
   align-self: center;
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: minmax(max-content, 400px), max-content;
   grid-template-rows: repeat(2, max-content);
   column-gap: 17px;
   row-gap: 8px;

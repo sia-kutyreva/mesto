@@ -1,7 +1,14 @@
 .popup__grid {
   display: grid;
-  grid-template-columns: repeat(2, min-content);
+  grid-template-columns: minmax(min-content, 430px) min-content;
   grid-template-rows: repeat(2, min-content);
   margin-left: 33px;
   margin-bottom: 33px;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 700px) {
+  .popup__grid {
+    margin: 0 15px 0 30px;
+  }
 }
