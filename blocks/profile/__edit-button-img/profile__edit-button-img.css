@@ -1,11 +1,6 @@
-.add-button__img {
-  width: 150px;
-}
-
 /*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
-@media screen and (max-width: 705px) {
-  .add-button__img {
-    width: 282px;
-    height: 54.4px;
+@media screen and (max-width: 320px) {
+  .profile__edit-button-img {
+    width: 7.5px;
   }
 }

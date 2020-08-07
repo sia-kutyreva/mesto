@@ -1,0 +1,11 @@
+.profile__add-button-img {
+  width: 150px;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 705px) {
+  .profile__add-button-img {
+    width: 282px;
+    height: 54.4px;
+  }
+}

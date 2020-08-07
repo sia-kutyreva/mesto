@@ -23,61 +23,57 @@
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__profession">Исследователь океана</p>
-            <button class="edit-button"><img class="edit-button__img" src="./images/edit-button.svg" alt="кнопка редактирования"></button>
+            <button class="profile__edit-button" type="button"><img class="profile__edit-button-img" src="./images/edit-button.svg" alt="кнопка редактирования"></button>
           </div>
         </div>
-        <button class="add-button">
-          <picture class="add-button__img">
-            <source media="(max-width: 705px)"
-              srcset="./images/add-button-mobile.svg">
-            <img src="./images/add-button.svg" alt="кнопка добавить">
-          </picture>
+        <button class="profile__add-button" type="button">
+          <img src="./images/add-button.svg" alt="кнопка добавить">
         </button>
       </section>
 
       <section class="elements">
-        <div class="element elements__element">
+        <article class="element elements__element">
           <img class="element__img" src="./images/karachaevsk.jpg" alt="фото Карачаевск">
           <div class="element__info">
             <h2 class="element__text">Карачаевск</h2>
-            <button class="element__like-button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
+            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
           </div>
-        </div>
-        <div class="element elements__element">
+        </article>
+        <article class="element elements__element">
           <img class="element__img" src="./images/elbrus.jpg" alt="фото гора Эльбрус">
           <div class="element__info">
             <h2 class="element__text">Гора Эльбрус</h2>
-            <button class="element__like-button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
+            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
           </div>
-        </div>
-        <div class="element elements__element">
+        </article>
+        <article class="element elements__element">
           <img class="element__img" src="./images/dombai.jpg" alt="фото Домбай">
           <div class="element__info">
             <h2 class="element__text">Домбай</h2>
-            <button class="element__like-button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
+            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
           </div>
-        </div>
-        <div class="element elements__element">
+        </article>
+        <article class="element elements__element">
           <img class="element__img" src="./images/elbrus.jpg" alt="фото гора Эльбрус">
           <div class="element__info">
             <h2 class="element__text">Гора Эльбрус</h2>
-            <button class="element__like-button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
+            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
           </div>
-        </div>
-        <div class="element elements__element">
+        </article>
+        <article class="element elements__element">
           <img class="element__img" src="./images/dombai.jpg" alt="фото Домбай">
           <div class="element__info">
             <h2 class="element__text">Домбай</h2>
-            <button class="element__like-button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
+            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
           </div>
-        </div>
-        <div class="element elements__element">
+        </article>
+        <article class="element elements__element">
           <img class="element__img" src="./images/karachaevsk.jpg" alt="фото Карачаевск">
           <div class="element__info">
             <h2 class="element__text">Карачаево-Черкесская Республика</h2>
-            <button class="element__like-button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
+            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
           </div>
-        </div>
+        </article>
       </section>
     </main>
 
@@ -87,16 +83,14 @@
 
     <div class="popup">
       <div class="popup__grid">
-        <button type="reset" class="close-button" form="popup-form"><img class="close-button__img" src="./images/close-icon.svg" alt="закрыть окно"></button>
-        <form class="popup__container" id="popup-form" autocomplete="on">
+        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form">
           <h2 class="popup__title">Редактировать профиль</h2>
           <fieldset class="popup__profile">
-            <input class="popup__name" type="text" placeholder="Имя" name="name">
-            <input class="popup__prof" type="text" placeholder="Профессия" name="profession">
+            <input class="popup__input popup__input_name" type="text" placeholder="Имя" name="name">
+            <input class="popup__input popup__input_profession" type="text" placeholder="Профессия" name="profession">
           </fieldset>
-          <button class="submit-button" type="submit">
-              <img class="submit-button__img" src="./images/submit-button.svg" alt="кнопка добавить">
-          </button>
+          <button class="popup__submit-button">Сохранить</button>
         </form>
       </div>
     </div>

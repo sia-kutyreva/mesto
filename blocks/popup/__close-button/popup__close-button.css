@@ -1,26 +1,27 @@
 /*Подключение стилей элементов блока*/
-@import url('./__img/add-button__img.css');
+@import url('./__img/close-button__img.css');
 
-.add-button {
+.popup__close-button {
+  width: min-content;
   border: 0;
   border-radius: 0;
   background: none;
   padding: 0;
-  min-height: 50px;
-  align-self: center;
   transition: opacity 0.7s ease;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 /*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
-.add-button:hover {
+.popup__close-button:hover {
   cursor: pointer;
   opacity: 0.6;
 }
 
-.add-button:active {
+.popup__close-button:active {
   outline: none;
 }
 
-.add-button:focus {
+.popup__close-button:focus {
   outline: none;
 }

@@ -1,13 +1,13 @@
 let popup = document.querySelector('.popup');
-let popupOpenButton = document.querySelector('.edit-button');
-let popupCloseButton = popup.querySelector('.close-button');
-let popupSubmitButton = popup.querySelector('.submit-button');
-let inputName = popup.querySelector('.popup__name');
-let inputProfession = popup.querySelector('.popup__prof');
+let popupOpenButton = document.querySelector('.profile__edit-button');
+let popupCloseButton = popup.querySelector('.popup__close-button');
+let popupSubmitButton = popup.querySelector('.popup__submit-button');
+let inputName = popup.querySelector('.popup__input_name');
+let inputProfession = popup.querySelector('.popup__input_profession');
 let profileName = document.querySelector('.profile__name');
 let profileProfession = document.querySelector('.profile__profession');
 
-const popupOpenClose = function() {
+function popupOpenClose() {
   popup.classList.toggle('popup_open-close');
   if (popup.classList.contains('popup_open-close') === true) {
     inputName.value = profileName.textContent;
@@ -19,7 +19,7 @@ const popupOpenClose = function() {
 }
 
 function editProfile(event) {
-  event.preventDefault()
+  event.preventDefault();
   profileName.textContent = inputName.value;
   profileProfession.textContent = inputProfession.value;
   popupOpenClose();
