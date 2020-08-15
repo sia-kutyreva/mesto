@@ -1,3 +1,4 @@
+/*Стили элемента блока*/
 .popup__grid {
   display: grid;
   grid-template-columns: minmax(min-content, 430px) min-content;

@@ -1,6 +1,4 @@
-/*Подключение стилей элементов блока*/
-@import url('./__img/close-button__img.css');
-
+/*Стили элемента блока*/
 .popup__close-button {
   width: min-content;
   border: 0;

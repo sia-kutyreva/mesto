@@ -1,0 +1,12 @@
+/*Подключение стилей элементов блока*/
+@import url('./__liked/section-elements__liked.css');
+
+/*Основные стили блока*/
+.section-elements {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  justify-content: center;
+  column-gap: 17px;
+  row-gap: 19px;
+}

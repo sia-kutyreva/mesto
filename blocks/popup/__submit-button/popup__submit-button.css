@@ -1,3 +1,4 @@
+/*Стили элемента блока*/
 .popup__submit-button {
   font-style: normal;
   font-weight: normal;
@@ -30,10 +31,3 @@
 .popup__submit-button:focus {
   outline: none;
 }
-
-/*Медиа-запрос для регулирования свойств при разном разрешении экрана
-@media screen and (max-width: 320px) {
-  .popup__container {
-    padding: 20px;
-  }
-}*/

@@ -1,6 +1,7 @@
 /*Подключение стилей элементов блока*/
 @import url('__profile/main-content__profile.css');
 
+/*Основные стили блока*/
 .main-content {
   margin-bottom: 66px;
   width: 68.9%;

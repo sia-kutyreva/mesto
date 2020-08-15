@@ -2,6 +2,7 @@
 @import url('./_name/popup__input_name.css');
 @import url('./_profession/popup__input_profession.css');
 
+/*Стили элемента блока*/
 .popup__input {
   font-style: normal;
   font-weight: normal;

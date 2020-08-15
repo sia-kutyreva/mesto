@@ -17,6 +17,7 @@
     </header>
 
     <main class="main-content">
+<!--Секция с информацией о пользователе-->
       <section class="profile main-content__profile">
         <div class="profile__wrapper">
           <img class="profile__avatar" src='./images/Avatar.jpg' alt='аватарка'>
@@ -30,50 +31,18 @@
           <img src="./images/add-button.svg" alt="кнопка добавить">
         </button>
       </section>
-
-      <section class="elements">
-        <article class="element elements__element">
-          <img class="element__img" src="./images/karachaevsk.jpg" alt="фото Карачаевск">
-          <div class="element__info">
-            <h2 class="element__text">Карачаевск</h2>
-            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
-          </div>
-        </article>
-        <article class="element elements__element">
-          <img class="element__img" src="./images/elbrus.jpg" alt="фото гора Эльбрус">
-          <div class="element__info">
-            <h2 class="element__text">Гора Эльбрус</h2>
-            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
-          </div>
-        </article>
-        <article class="element elements__element">
-          <img class="element__img" src="./images/dombai.jpg" alt="фото Домбай">
-          <div class="element__info">
-            <h2 class="element__text">Домбай</h2>
-            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
-          </div>
-        </article>
-        <article class="element elements__element">
-          <img class="element__img" src="./images/elbrus.jpg" alt="фото гора Эльбрус">
-          <div class="element__info">
-            <h2 class="element__text">Гора Эльбрус</h2>
-            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
-          </div>
-        </article>
-        <article class="element elements__element">
-          <img class="element__img" src="./images/dombai.jpg" alt="фото Домбай">
-          <div class="element__info">
-            <h2 class="element__text">Домбай</h2>
-            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
-          </div>
-        </article>
-        <article class="element elements__element">
-          <img class="element__img" src="./images/karachaevsk.jpg" alt="фото Карачаевск">
-          <div class="element__info">
-            <h2 class="element__text">Карачаево-Черкесская Республика</h2>
-            <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
-          </div>
-        </article>
+<!--Секция с шаблоном для создания карточек-->
+      <section class="section-elements">
+        <template class="elements">
+          <article class="element">
+            <button class="element__del-button" type="button"><img class="element__del" src="./images/del-button.svg" alt="удалить"></button>
+            <img class="element__img">
+            <div class="element__info">
+              <h2 class="element__text"></h2>
+              <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
+            </div>
+          </article>
+        </template>
       </section>
     </main>
 
@@ -81,6 +50,8 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 
+<!--блоки попапов-->
+  <!--попап редактирования профиля-->
     <div class="popup">
       <div class="popup__grid">
         <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
@@ -94,7 +65,31 @@
         </form>
       </div>
     </div>
-  <template></template> 
+
+  <!--попап для добавления новых карточек-->
+    <div class="new-card">
+      <div class="new-card__grid">
+        <button type="reset" class="new-card__close-button" form="popup-form"><img class="new-card__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <form class="new-card__container" id="popup-form" autocomplete="on" name="popup-form">
+          <h2 class="new-card__title">Новое место</h2>
+          <fieldset class="new-card__profile">
+            <input class="new-card__input new-card__input_name" type="text" placeholder="Название" name="name">
+            <input class="new-card__input new-card__input_link" type="text" placeholder="Ссылка на картинку" name="link">
+          </fieldset>
+          <button class="new-card__submit-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  
+  <!--попап для показа увеличенного фото-->
+    <div class="popup-card">
+      <div class="popup-card__wrapper">
+        <button type="reset" class="popup-card__close-button" form="popup-form"><img class="popup-card__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <img class="popup-card__img" alt="фото">
+        <h2 class="popup-card__title"></h2>
+      </div>
+    </div>
+
   </div>
   <script src="./scripts/main.js"></script>
 </body>

@@ -9,6 +9,7 @@
 @import url('./__add-button/profile__add-button.css');
 @import url('./__add-button-img/profile__add-button-img.css');
 
+/*Основные стили блока*/
 .profile {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   width: 100%;

@@ -1,9 +1,10 @@
+/*Стили элемента блока*/
 .element__like-button {
   border: 0;
   border-radius: 0;
   background: none;
   padding: 0;
-  transition: transform 0.4s ease;
+  transition: opacity .4s ease;
   width: 29px;
   height: 29px;
 }
@@ -11,7 +12,7 @@
 /*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
 .element__like-button:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  opacity: .6;
 }
 
 .element__like-button:active {

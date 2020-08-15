@@ -1,6 +1,7 @@
 /*Подключение стилей элементов блока*/
 @import url('./__header/page__header.css');
 
+/*Основные стили блока*/
 .page {
   margin: 0 auto;
   padding: 45px 0 60px 0;

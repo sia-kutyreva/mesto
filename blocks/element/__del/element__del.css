@@ -1,0 +1,6 @@
+/*Стили элемента блока*/
+.element__del {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
