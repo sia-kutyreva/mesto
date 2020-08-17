@@ -19,7 +19,7 @@
 }
 
 /*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
-@media screen and (max-width: 705px) {
+@media screen and (max-width: 711px) {
   .profile {
     flex-direction: column;
     align-items: center;

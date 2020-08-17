@@ -4,8 +4,8 @@
 @import url('./__del/element__del.css');
 @import url('./__info/element__info.css');
 @import url('./__text/element__text.css');
-@import url('./__like/element__like.css');
 @import url('./__like-button/element__like-button.css');
+@import url('./__liked/element__liked.css');
 
 /*Основные стили блока*/
 .element {

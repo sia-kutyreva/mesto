@@ -31,18 +31,11 @@
           <img src="./images/add-button.svg" alt="кнопка добавить">
         </button>
       </section>
-<!--Секция с шаблоном для создания карточек-->
+<!--Секция где располагаются карточки-->
       <section class="section-elements">
-        <template class="elements">
-          <article class="element">
-            <button class="element__del-button" type="button"><img class="element__del" src="./images/del-button.svg" alt="удалить"></button>
-            <img class="element__img">
-            <div class="element__info">
-              <h2 class="element__text"></h2>
-              <button class="element__like-button" type="button"><img class="element__like" src="./images/element-like.svg" alt="понравилось"></button>
-            </div>
-          </article>
-        </template>
+        <ul class="elements-list">
+
+        </ul>
       </section>
     </main>
 
@@ -73,8 +66,8 @@
         <form class="new-card__container" id="popup-form" autocomplete="on" name="popup-form">
           <h2 class="new-card__title">Новое место</h2>
           <fieldset class="new-card__profile">
-            <input class="new-card__input new-card__input_name" type="text" placeholder="Название" name="name">
-            <input class="new-card__input new-card__input_link" type="text" placeholder="Ссылка на картинку" name="link">
+            <input class="new-card__input new-card__input_name" type="text" placeholder="Название" name="name" required>
+            <input class="new-card__input new-card__input_link" type="url" placeholder="Ссылка на картинку" name="link" required> 
           </fieldset>
           <button class="new-card__submit-button">Сохранить</button>
         </form>
@@ -89,6 +82,18 @@
         <h2 class="popup-card__title"></h2>
       </div>
     </div>
+
+  <!--шаблон для карточек с фото-->
+    <template class="elements">
+      <li class="element">
+        <button class="element__del-button" type="button"><img class="element__del" src="./images/del-button.svg" alt="удалить"></button>
+        <img class="element__img">
+        <div class="element__info">
+          <h2 class="element__text"></h2>
+          <button class="element__like-button" type="button"></button>
+        </div>
+      </li>
+    </template>
 
   </div>
   <script src="./scripts/main.js"></script>

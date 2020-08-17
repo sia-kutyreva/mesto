@@ -27,7 +27,7 @@
 }
 
 /*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
-@media screen and (max-width: 705px) {
+@media screen and (max-width: 711px) {
   .profile__add-button {
     width: 282px;
     height: 54.37px;
