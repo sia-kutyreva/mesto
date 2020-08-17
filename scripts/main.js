@@ -64,7 +64,7 @@ function getCardElement(data) {
   cardImage.addEventListener('click', function() {
     popupImage.src = data.link;
     popupImageTitle.textContent = data.name;
-    popupCard.classList.toggle('popup-card_open-close');
+    popupCard.classList.toggle('popup_open-close');
   });
   console.log(cardElement);
   return cardElement;
