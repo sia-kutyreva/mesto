@@ -1,6 +1,0 @@
-/*Стили элемента блока*/
-.popup-card__wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, min-content);
-  grid-template-rows: repeat(3, min-content);
-}

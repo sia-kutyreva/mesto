@@ -5,8 +5,11 @@
 @import url('./__profile/popup__profile.css');
 @import url('./__input/popup__input.css');
 @import url('./__submit-button/popup__submit-button.css');
-@import url('./__close-button/popup__close-button.css');
-@import url('./__close-button-img/popup__close-button-img.css');
+@import url('./__input/_name-card/popup__input_name-card.css');
+@import url('./__input/_link-card/popup__input_link-card.css');
+@import url('./_type/popup_type_image.css');
+@import url('./_type/popup_type_profile.css');
+@import url('./_type/popup_type_new-card.css');
 
 /*Основные стиили блока*/
 .popup {

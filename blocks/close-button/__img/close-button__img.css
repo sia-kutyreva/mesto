@@ -1,6 +1,6 @@
 /*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
 @media screen and (max-width: 700px) {
-  .popup-card__close-button-img {
+  .close-button__img {
     width: 30px;
     height: 30px;
   }

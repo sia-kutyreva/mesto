@@ -24,11 +24,11 @@
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__profession">Исследователь океана</p>
-            <button class="profile__edit-button" type="button"><img class="profile__edit-button-img" src="./images/edit-button.svg" alt="кнопка редактирования"></button>
+            <button class="profile__edit-button" type="button"><img class="profile__edit-button-img" src="./images/edit-button.svg" alt="редактировать профиль"></button>
           </div>
         </div>
         <button class="profile__add-button" type="button">
-          <img src="./images/add-button.svg" alt="кнопка добавить">
+          <img class="profile__add-button-img" src="./images/add-button.svg" alt="добавить карточку">
         </button>
       </section>
 <!--Секция где располагаются карточки-->
@@ -45,9 +45,9 @@
 
 <!--блоки попапов-->
   <!--попап редактирования профиля-->
-    <div class="popup">
+    <div class="popup popup_type_profile">
       <div class="popup__grid">
-        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <button type="reset" class="close-button" form="popup-form"><img class="close-button__img" src="./images/close-icon.svg" alt="закрыть окно"></button>
         <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form">
           <h2 class="popup__title">Редактировать профиль</h2>
           <fieldset class="popup__profile">
@@ -60,24 +60,24 @@
     </div>
 
   <!--попап для добавления новых карточек-->
-    <div class="new-card">
-      <div class="new-card__grid">
-        <button type="reset" class="new-card__close-button" form="popup-form"><img class="new-card__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
-        <form class="new-card__container" id="popup-form" autocomplete="on" name="popup-form">
-          <h2 class="new-card__title">Новое место</h2>
-          <fieldset class="new-card__profile">
-            <input class="new-card__input new-card__input_name" type="text" placeholder="Название" name="name" required>
-            <input class="new-card__input new-card__input_link" type="url" placeholder="Ссылка на картинку" name="link" required> 
+    <div class="popup popup_type_new-card">
+      <div class="popup__grid">
+        <button type="reset" class="popup__close-button close-button" form="popup-form"><img class="close-button__img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form">
+          <h2 class="popup__title">Новое место</h2>
+          <fieldset class="popup__profile">
+            <input class="popup__input popup__input_name-card" type="text" placeholder="Название" name="name" required>
+            <input class="popup__input popup__input_link-card" type="url" placeholder="Ссылка на картинку" name="link" required> 
           </fieldset>
-          <button class="new-card__submit-button">Сохранить</button>
+          <button class="popup__submit-button">Создать</button>
         </form>
       </div>
     </div>
   
   <!--попап для показа увеличенного фото-->
-    <div class="popup-card">
-      <div class="popup-card__wrapper">
-        <button type="reset" class="popup-card__close-button" form="popup-form"><img class="popup-card__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+    <div class="popup popup_type_image">
+      <div class="popup-card">
+        <button type="reset" class="popup-card__close-button close-button" form="popup-form"><img class="close-button__img" src="./images/close-icon.svg" alt="закрыть окно"></button>
         <img class="popup-card__img" alt="фото">
         <h2 class="popup-card__title"></h2>
       </div>
@@ -96,6 +96,8 @@
     </template>
 
   </div>
+<!--Подключение массива с готовыми карточками-->
+  <script src="./scripts/initial-card.js"></script>
   <script src="./scripts/main.js"></script>
 </body>
 
