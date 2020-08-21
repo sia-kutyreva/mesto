@@ -1,5 +1,0 @@
-/*Стили элемента блока*/
-.popup-card__close-button {
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
