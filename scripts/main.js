@@ -80,16 +80,6 @@ function togglePopup(popup) {
   popup.classList.toggle('popup_open-close');
 };
 
-function openProfilePopup() {
-  profileInputName.value = profileName.textContent;
-  profileInputProfession.value = profileProfession.textContent;
-  togglePopup(popupProfile);
-};
-
-function openNewCardPopup() {
-  togglePopup(popupNewCard);
-};
-
 function submitProfile(event) {
   event.preventDefault();
   profileName.textContent = profileInputName.value;
@@ -105,12 +95,16 @@ function submitNewCard() {
   renderCard(newCardObj);
 };
 
-popupProfileOpen.addEventListener('click', openProfilePopup);
-popupNewCardOpen.addEventListener('click', openNewCardPopup);
+popupProfileOpen.addEventListener('click', () => {
+  profileInputName.value = profileName.textContent;
+  profileInputProfession.value = profileProfession.textContent;
+  togglePopup(popupProfile);
+});
+popupNewCardOpen.addEventListener('click', () => togglePopup(popupNewCard));
 popupProfileForm.addEventListener('submit', submitProfile);
 popupNewCardForm.addEventListener('submit', submitNewCard);
-popupProfileSubmit.addEventListener('click', (event) => togglePopup(event.target.closest('.popup')));
-popupNewCardSubmit.addEventListener('click', (event) => togglePopup(event.target.closest('.popup')));
+popupProfileSubmit.addEventListener('click', () => togglePopup(popupProfile));
+popupNewCardSubmit.addEventListener('click', () => togglePopup(popupNewCard));
 popupCloseButton.forEach((closeButton) => {
   closeButton.addEventListener('click', (event) => togglePopup(event.target.closest('.popup')));
 });
