@@ -48,11 +48,13 @@
     <div class="popup popup_type_profile">
       <div class="popup__grid">
         <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
-        <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form">
+        <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
           <fieldset class="popup__profile">
-            <input class="popup__input popup__input_name" type="text" placeholder="Имя" name="name">
-            <input class="popup__input popup__input_profession" type="text" placeholder="Профессия" name="profession">
+            <input class="popup__input popup__input_name" id='name-input' type="text" placeholder="Имя" name="name" minlength="2" maxlength="40" required>
+            <span class='popup__input-error popup__input-error_active' id='name-input-error'></span>
+            <input class="popup__input popup__input_profession" id='profession-input' type="text" placeholder="Профессия" name="profession" minlength="2" maxlength="200" required>
+            <span class='popup__input-error popup__input-error_active' id='profession-input-error'></span>
           </fieldset>
           <button class="popup__submit-button">Сохранить</button>
         </form>
@@ -66,8 +68,10 @@
         <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form">
           <h2 class="popup__title">Новое место</h2>
           <fieldset class="popup__profile">
-            <input class="popup__input popup__input_name-card" type="text" placeholder="Название" name="name" required>
-            <input class="popup__input popup__input_link-card" type="url" placeholder="Ссылка на картинку" name="link" required> 
+            <input class="popup__input popup__input_name-card" type="text" placeholder="Название" name="new-card-name" id='new-card-name' minlength="2" maxlength="30" required>
+            <span class='popup__input-error popup__input-error_active' id='new-card-name-error'></span>
+            <input class="popup__input popup__input_link-card" type="url" placeholder="Ссылка на картинку" name="link" id='new-link-name' required>
+            <span class='popup__input-error popup__input-error_active' id='new-link-name-error'></span>
           </fieldset>
           <button class="popup__submit-button">Создать</button>
         </form>
@@ -98,6 +102,7 @@
   </div>
 <!--Подключение массива с готовыми карточками-->
   <script src="./scripts/main.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 
 </html>
