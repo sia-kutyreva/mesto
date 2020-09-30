@@ -1,7 +1,8 @@
 /*Стили элемента блока*/
 .profile__wrapper {
+  width: calc(100% - 150px);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 

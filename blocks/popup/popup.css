@@ -29,5 +29,5 @@
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s, visibility 1s linear 1s;
+  transition: opacity 0.5s, visibility 0.5s;
 }
