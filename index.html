@@ -48,7 +48,7 @@
     <div class="popup popup_type_profile">
       <div class="popup__grid">
         <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
-        <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form" novalidate>
+        <form class="popup__container" id="popup-form-profile" autocomplete="on" name="popup-form" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
           <fieldset class="popup__profile">
             <input class="popup__input popup__input_name" id='name-input' type="text" placeholder="Имя" name="name" minlength="2" maxlength="40" required>
@@ -65,7 +65,7 @@
     <div class="popup popup_type_new-card">
       <div class="popup__grid">
         <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
-        <form class="popup__container" id="popup-form" autocomplete="on" name="popup-form">
+        <form class="popup__container" id="popup-form-new-card" autocomplete="on" name="popup-form">
           <h2 class="popup__title">Новое место</h2>
           <fieldset class="popup__profile">
             <input class="popup__input popup__input_name-card" type="text" placeholder="Название" name="new-card-name" id='new-card-name' minlength="2" maxlength="30" required>
@@ -101,8 +101,6 @@
 
   </div>
   <script type="module" src="./scripts/index.js"></script>
-  <script type="module" src="./scripts/Cards.js"></script>
-  <script type="module" src="./scripts/FormValidator.js"></script>
 </body>
 
 </html>

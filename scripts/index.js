@@ -1,3 +1,7 @@
+import {Card} from './Cards.js';
+import {initialCards} from './initialCards.js';
+import {FormValidator} from './FormValidator.js';
+
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupNewCard = document.querySelector('.popup_type_new-card');
 const popupCardImage = document.querySelector('.popup_type_image');
@@ -17,6 +21,18 @@ const newCardInputName = popupNewCard.querySelector('.popup__input_name-card');
 const newCardInputLink = popupNewCard.querySelector('.popup__input_link-card');
 const popupImage = popupCardImage.querySelector('.popup__img');
 const popupImageTitle = popupCardImage.querySelector('.popup__img-title');
+const newCardInputList = Array.from(popupNewCard.querySelectorAll('.popup__input'));
+const profileInputList = Array.from(popupProfile.querySelectorAll('.popup__input'));
+const parameters = {
+  formSelector: '.popup__container',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_inactive',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active'
+}
+const profileValidator = new FormValidator(parameters, popupProfile);
+const newCardValidator = new FormValidator(parameters, popupNewCard);
 
 function openPopup(popup) {
   popup.classList.add('popup_open-close');
@@ -77,7 +93,7 @@ popupNewCardOpen.addEventListener('click', () => {
   newCardInputName.value = '';
   newCardInputLink.value = '';
   openPopup(popupNewCard);
-  disabledSubmitButton(popupNewCardSubmit);
+  newCardValidator.toggleButtonState(newCardInputList, popupNewCardSubmit);
 });
 popupProfileForm.addEventListener('submit', submitProfile);
 popupNewCardForm.addEventListener('submit', submitNewCard);
@@ -98,15 +114,10 @@ function initionProject() {
   initialCards.forEach((item) => {
     const card = new Card(item, '.elements');
     const cardElement = card.generateCard();
-    sectionElements.prepend(cardElement);
+    sectionElements.append(cardElement);
   });
-  const profileValidator = new FormValidator(parameters, popupProfile);
   profileValidator.enableValidation();
-  const newCardValidator = new FormValidator(parameters, popupNewCard);
   newCardValidator.enableValidation();
 };
 
 initionProject();
-
-import {initialCards, Card} from './Cards.js';
-import {FormValidator, parameters} from './FormValidator.js';
