@@ -78,11 +78,6 @@ function closePopupOverlay(evt) {
   };
 };
 
-function disabledSubmitButton(button) {
-  button.setAttribute('disabled', true);
-  button.classList.add('popup__submit-button_inactive');
-};
-
 popupProfileOpen.addEventListener('click', () => {
   profileInputName.value = profileName.textContent;
   profileInputProfession.value = profileProfession.textContent;
