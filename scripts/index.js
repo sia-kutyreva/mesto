@@ -1,4 +1,3 @@
-//объявление переменных
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupNewCard = document.querySelector('.popup_type_new-card');
 const popupCardImage = document.querySelector('.popup_type_image');
@@ -18,37 +17,6 @@ const newCardInputName = popupNewCard.querySelector('.popup__input_name-card');
 const newCardInputLink = popupNewCard.querySelector('.popup__input_link-card');
 const popupImage = popupCardImage.querySelector('.popup__img');
 const popupImageTitle = popupCardImage.querySelector('.popup__img-title');
-const popupList = document.querySelectorAll('.popup');
-const cardTemplate = document.querySelector('.elements').content;
-
-function getCardElement(data) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImg = cardElement.querySelector('.element__img');
-  cardImg.src = data.link;
-  cardImg.alt = data.name;
-  cardElement.querySelector('.element__text').textContent = data.name;
-  const likeButton = cardElement.querySelector('.element__like-button');
-  likeButton.addEventListener('click', function() {
-    likeButton.classList.toggle('element__liked');
-  });
-  const delButton = cardElement.querySelector('.element__del-button');
-  delButton.addEventListener('click', function() {
-    const card = delButton.closest('.element');
-    card.remove();
-  });
-  cardImg.addEventListener('click', function() {
-    popupImage.src = data.link;
-    popupImage.alt = data.name;
-    popupImageTitle.textContent = data.name;
-    openPopup(popupCardImage);
-  });
-  return cardElement;
-};
-
-function renderCard(obj) {
-  const newCardElement = getCardElement(obj);
-  sectionElements.prepend(newCardElement);
-};
 
 function openPopup(popup) {
   popup.classList.add('popup_open-close');
@@ -75,7 +43,9 @@ function submitNewCard(event) {
     name: newCardInputName.value,
     link: newCardInputLink.value
   }
-  renderCard(newCardObj);
+  const card = new Card(newCardObj, '.elements');
+  const cardElement = card.generateCard();
+  sectionElements.prepend(cardElement);
   closePopup(popupNewCard);
 };
 
@@ -116,11 +86,27 @@ popupCloseButton.forEach((closeButton) => {
     closePopup(event.target.closest('.popup'));
   });
 });
+sectionElements.addEventListener('click', (event) => {
+  if (event.target.classList.contains('element__img')) {
+    popupImage.src = event.target.src;
+    popupImageTitle.textContent = event.target.alt;
+    openPopup(popupCardImage);
+  }
+})
 
 function initionProject() {
   initialCards.forEach((item) => {
-    renderCard(item);
+    const card = new Card(item, '.elements');
+    const cardElement = card.generateCard();
+    sectionElements.prepend(cardElement);
   });
+  const profileValidator = new FormValidator(parameters, popupProfile);
+  profileValidator.enableValidation();
+  const newCardValidator = new FormValidator(parameters, popupNewCard);
+  newCardValidator.enableValidation();
 };
 
 initionProject();
+
+import {initialCards, Card} from './Cards.js';
+import {FormValidator, parameters} from './FormValidator.js';
