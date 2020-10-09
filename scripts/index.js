@@ -87,7 +87,7 @@ popupProfileOpen.addEventListener('click', () => {
   profileInputName.value = profileName.textContent;
   profileInputProfession.value = profileProfession.textContent;
   openPopup(popupProfile);
-  disabledSubmitButton(popupProfileSubmit);
+  profileValidator.toggleButtonState(profileInputList, popupProfileSubmit);
 });
 popupNewCardOpen.addEventListener('click', () => {
   newCardInputName.value = '';
