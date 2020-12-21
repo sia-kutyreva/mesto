@@ -4,31 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
+  <!--<link rel="stylesheet" href="./pages/index.css">-->
   <title>Место</title>
 </head>
 
 <body class="body-background">
 
   <div class="page">
-
+    
     <header class="header page__header">
-      <img class="logo" src="./images/header.svg" alt="Логотип">
+      <img class="logo" src="<%=require('./images/header.svg')%>" alt="Логотип">
     </header>
 
     <main class="main-content">
 <!--Секция с информацией о пользователе-->
       <section class="profile main-content__profile">
         <div class="profile__wrapper">
-          <img class="profile__avatar" src='./images/Avatar.jpg' alt='аватарка'>
+          <img class="profile__avatar" src="<%=require('./images/Avatar.jpg')%>" alt='аватарка'>
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__profession">Исследователь океана</p>
-            <button class="profile__edit-button" type="button"><img class="profile__edit-button-img" src="./images/edit-button.svg" alt="редактировать профиль"></button>
+            <button class="profile__edit-button" type="button"><img class="profile__edit-button-img" src="<%=require('./images/edit-button.svg')%>" alt="редактировать профиль"></button>
           </div>
         </div>
         <button class="profile__add-button" type="button">
-          <img class="profile__add-button-img" src="./images/add-button.svg" alt="добавить карточку">
+          <img class="profile__add-button-img" src="<%=require('./images/add-button.svg')%>" alt="добавить карточку">
         </button>
       </section>
 <!--Секция где располагаются карточки-->
@@ -47,13 +47,13 @@
   <!--попап редактирования профиля-->
     <div class="popup popup_type_profile">
       <div class="popup__grid">
-        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="<%=require('./images/close-icon.svg')%>" alt="закрыть окно"></button>
         <form class="popup__container" id="popup-form-profile" autocomplete="on" name="popup-form" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
           <fieldset class="popup__profile">
             <input class="popup__input popup__input_name" id='name-input' type="text" placeholder="Имя" name="name" minlength="2" maxlength="40" required>
             <span class='popup__input-error popup__input-error_active' id='name-input-error'></span>
-            <input class="popup__input popup__input_profession" id='profession-input' type="text" placeholder="Профессия" name="profession" minlength="2" maxlength="200" required>
+            <input class="popup__input popup__input_info popup__input_profession" id='profession-input' type="text" placeholder="Профессия" name="profession" minlength="2" maxlength="200" required>
             <span class='popup__input-error popup__input-error_active' id='profession-input-error'></span>
           </fieldset>
           <button class="popup__submit-button">Сохранить</button>
@@ -64,13 +64,13 @@
   <!--попап для добавления новых карточек-->
     <div class="popup popup_type_new-card">
       <div class="popup__grid">
-        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="<%=require('./images/close-icon.svg')%>" alt="закрыть окно"></button>
         <form class="popup__container" id="popup-form-new-card" autocomplete="on" name="popup-form">
           <h2 class="popup__title">Новое место</h2>
           <fieldset class="popup__profile">
-            <input class="popup__input popup__input_name-card" type="text" placeholder="Название" name="new-card-name" id='new-card-name' minlength="2" maxlength="30" required>
+            <input class="popup__input popup__input_name popup__input_name-card" type="text" placeholder="Название" name="name" id='new-card-name' minlength="2" maxlength="30" required>
             <span class='popup__input-error popup__input-error_active' id='new-card-name-error'></span>
-            <input class="popup__input popup__input_link-card" type="url" placeholder="Ссылка на картинку" name="link" id='new-link-name' required>
+            <input class="popup__input popup__input_info popup__input_link-card" type="url" placeholder="Ссылка на картинку" name="link" id='new-link-name' required>
             <span class='popup__input-error popup__input-error_active' id='new-link-name-error'></span>
           </fieldset>
           <button class="popup__submit-button">Создать</button>
@@ -81,7 +81,7 @@
   <!--попап для показа увеличенного фото-->
     <div class="popup popup_type_image">
       <div class="popup__grid popup__grid_type_card">
-        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="./images/close-icon.svg" alt="закрыть окно"></button>
+        <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="<%=require('./images/close-icon.svg')%>" alt="закрыть окно"></button>
         <img class="popup__img">
         <h2 class="popup__img-title"></h2>
       </div>
@@ -90,7 +90,7 @@
   <!--шаблон для карточек с фото-->
     <template class="elements">
       <li class="element">
-        <button class="element__del-button" type="button"><img class="element__del" src="./images/del-button.svg" alt="удалить"></button>
+        <button class="element__del-button" type="button"><img class="element__del" src="<%=require('./images/del-button.svg')%>" alt="удалить"></button>
         <img class="element__img">
         <div class="element__info">
           <h2 class="element__text"></h2>
@@ -100,7 +100,7 @@
     </template>
 
   </div>
-  <script type="module" src="./scripts/index.js"></script>
+  <!--<script type="module" src="./pages/index.js"></script>-->
 </body>
 
 </html>
