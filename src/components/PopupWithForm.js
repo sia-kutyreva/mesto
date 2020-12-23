@@ -29,7 +29,7 @@ class PopupWithForm extends Popup{
   }
 
   close() {
-    this._popup.removeEventListener('submit', this._submitForm);
+    //this._popup.removeEventListener('submit', this._submitForm);
     super.close();
     const form = this._popup.querySelector('.popup__container');
     form.reset();

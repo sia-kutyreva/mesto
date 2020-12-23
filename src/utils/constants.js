@@ -3,7 +3,11 @@ const popupImageTitle = document.querySelector('.popup__img-title');
 const popupNewCardOpen = document.querySelector('.profile__add-button');
 const popupProfOpen = document.querySelector('.profile__edit-button');
 const popupProfile = document.querySelector('.popup_type_profile');
+const profileInputList = Array.from(popupProfile.querySelectorAll('.popup__input'));
+const profileSubmitButton = popupProfile.querySelector('.popup__submit-button');
 const popupNewCard = document.querySelector('.popup_type_new-card');
+const newCardInputList = Array.from(popupNewCard.querySelectorAll('.popup__input'));
+const newCardSubmitButton = popupNewCard.querySelector('.popup__submit-button');
 const profileInputName = popupProfile.querySelector('.popup__input_name');
 const profileInputProfession = popupProfile.querySelector('.popup__input_profession');
 const parameters = {
@@ -15,4 +19,5 @@ const parameters = {
   errorClass: 'popup__input-error_active'
 }
 
-export { popupImage, popupImageTitle, popupNewCardOpen, popupProfOpen, popupProfile, popupNewCard, profileInputName, profileInputProfession, parameters };
+export { popupImage, popupImageTitle, popupNewCardOpen, popupProfOpen, popupProfile, popupNewCard, profileInputName, profileInputProfession, parameters, profileInputList, 
+  newCardInputList, profileSubmitButton, newCardSubmitButton };

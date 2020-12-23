@@ -13,7 +13,11 @@ import {
   popupProfile,
   popupProfOpen,
   popupNewCardOpen,
-  parameters 
+  parameters,
+  profileInputList, 
+  newCardInputList,
+  profileSubmitButton,
+  newCardSubmitButton
    } from '../utils/constants.js';
 
 const profileValidator = new FormValidator(parameters, popupProfile);
@@ -21,66 +25,69 @@ profileValidator.enableValidation();
 const newCardValidator = new FormValidator(parameters, popupNewCard);
 newCardValidator.enableValidation();
 
+const popupImage = new PopupWithImage('.popup_type_image');
+popupImage.setEventListeners();
+
 const cardsList = new Section({
   items: initialCards,
   renderer: (item) => {
-    const card = new Card(item, '.elements', {
-    handleCardClick: (evt) => {
-      const imageInfo = {
-        name: evt.target.alt,
-        info: evt.target.src
-      };
-      const popupImage = new PopupWithImage('.popup_type_image');
-      popupImage.open(imageInfo);
-      popupImage.setEventListeners();
-    }
-  });
+    const card = new Card(item, '.elements',
+      function handleCardClick() {
+        popupImage.open(item);
+      }
+    );
     const cardElement = card.generateCard();
     cardsList.addItem(cardElement);
   },
 },
 '.elements-list'
 );
-
 cardsList.renderItems();
 
+const userInfo = new UserInfo({
+  selectorUserName: '.profile__name',
+  selectorUserInfo: '.profile__profession'
+});
+
+const popupProfileForm = new PopupWithForm(
+  '.popup_type_profile', {
+    formSubmit: (data) => {
+      userInfo.setUserInfo(data);
+    }
+  }
+);
+popupProfileForm.setEventListeners();
+
+const popupNewCardForm = new PopupWithForm(
+  '.popup_type_new-card', {
+    formSubmit: (item) => {
+      const card = new Card(item, '.elements', 
+        function handleCardClick() {
+          popupImage.open(item);
+        }
+      );
+      const cardElement = card.generateCard();
+      cardsList.addItem(cardElement);
+    }
+  }
+);
+popupNewCardForm.setEventListeners();
 
 popupProfOpen.addEventListener('click', () => {
-  const popupForm = new PopupWithForm(
-    '.popup_type_profile', {
-      formSubmit: (data) => {
-        const info = new UserInfo({
-          selectorUserName: '.profile__name',
-          selectorUserInfo: '.profile__profession'});
-        info.setUserInfo(data);
-    }});
-  popupForm.open();
-  const info = new UserInfo({
-    selectorUserName: '.profile__name',
-    selectorUserInfo: '.profile__profession'});
-  const userInfo = info.getUserInfo();
-  profileInputName.value = userInfo.name;
-  profileInputProfession.value = userInfo.info;
-  popupForm.setEventListeners();
+  popupProfileForm.open();
+  profileInputList.forEach((inputElement) =>
+    profileValidator.hideInputError(inputElement)
+  );
+  const info = userInfo.getUserInfo();
+  profileInputName.value = info.name;
+  profileInputProfession.value =info.info;
+  profileValidator.toggleButtonState(profileInputList, profileSubmitButton);
 });
 
 popupNewCardOpen.addEventListener('click', () => {
-  const popupForm = new PopupWithForm(
-    '.popup_type_new-card', {
-      formSubmit: (data) => {
-        const card = new Card(data, '.elements', {
-          handleCardClick: (evt) => {
-            const imageInfo = {
-              name: evt.target.alt,
-              info: evt.target.src
-            };
-            const popupImage = new PopupWithImage('.popup_type_image');
-            popupImage.open(imageInfo);
-            popupImage.setEventListeners();
-        }});
-        const cardElement = card.generateCard();
-        cardsList.addItem(cardElement);
-    }});
-  popupForm.open();
-  popupForm.setEventListeners();
+  popupNewCardForm.open();
+  newCardInputList.forEach((inputElement) =>
+    newCardValidator.hideInputError(inputElement)
+  );
+  newCardValidator.toggleButtonState(newCardInputList, newCardSubmitButton);
 });

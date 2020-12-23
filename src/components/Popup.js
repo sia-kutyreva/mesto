@@ -5,10 +5,12 @@ class Popup {
 
   open() {
     this._popup.classList.add('popup_open-close');
+    document.addEventListener('keydown', (evt) => this._handleEscClose(evt));
   }
 
   close() {
     this._popup.classList.remove('popup_open-close');
+    document.removeEventListener('keydown', (evt) => this._handleEscClose(evt));
   }
 
   _handleEscClose(evt) {
@@ -27,8 +29,7 @@ class Popup {
     this._popup.querySelector('.popup__close-button').addEventListener('click', () => {
 			this.close();
     });
-    document.addEventListener('keydown', (evt) => this._handleEscClose(evt));
-    document.addEventListener('click', (evt) => this._handleOverlayClose(evt));
+    this._popup.addEventListener('click', (evt) => this._handleOverlayClose(evt));
   }
 }
 
