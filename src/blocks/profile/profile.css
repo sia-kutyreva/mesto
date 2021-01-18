@@ -1,5 +1,6 @@
 /*Подключение стилей элементов блока*/
 @import url('./__wrapper/profile__wrapper.css');
+@import url('./__avatar-overlay/profile__avatar-overlay.css');
 @import url('./__avatar/profile__avatar.css');
 @import url('./__info/profile__info.css');
 @import url('./__name/profile__name.css');

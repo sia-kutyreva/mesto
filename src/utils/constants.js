@@ -10,6 +10,10 @@ const newCardInputList = Array.from(popupNewCard.querySelectorAll('.popup__input
 const newCardSubmitButton = popupNewCard.querySelector('.popup__submit-button');
 const profileInputName = popupProfile.querySelector('.popup__input_name');
 const profileInputProfession = popupProfile.querySelector('.popup__input_profession');
+const profileName = document.querySelector('.profile__name');
+const profileProf = document.querySelector('.profile__profession');
+const profileAvatar = document.querySelector('.profile__avatar');
+const profileAvatarOverlay = document.querySelector('.profile__avatar-overlay');
 const parameters = {
   formSelector: '.popup__container',
   inputSelector: '.popup__input',
@@ -20,4 +24,4 @@ const parameters = {
 }
 
 export { popupImage, popupImageTitle, popupNewCardOpen, popupProfOpen, popupProfile, popupNewCard, profileInputName, profileInputProfession, parameters, profileInputList, 
-  newCardInputList, profileSubmitButton, newCardSubmitButton };
+  newCardInputList, profileSubmitButton, newCardSubmitButton, profileName, profileProf, profileAvatar, profileAvatarOverlay };

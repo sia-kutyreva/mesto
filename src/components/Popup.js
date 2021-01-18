@@ -1,6 +1,7 @@
 class Popup {
-  constructor(popupSelector) {
+  constructor(popupSelector, formSubmit) {
     this._popup = document.querySelector(popupSelector);
+    this._formSubmit = formSubmit;
   }
 
   open() {

@@ -12,7 +12,7 @@ class PopupWithForm extends Popup{
     this._formValues = {};
     this._formValues = {
       name: this._popup.querySelector('.popup__input_name').value,
-      info: this._popup.querySelector('.popup__input_info').value
+      link: this._popup.querySelector('.popup__input_info').value
     };
     return this._formValues;
   }
@@ -29,7 +29,6 @@ class PopupWithForm extends Popup{
   }
 
   close() {
-    //this._popup.removeEventListener('submit', this._submitForm);
     super.close();
     const form = this._popup.querySelector('.popup__container');
     form.reset();

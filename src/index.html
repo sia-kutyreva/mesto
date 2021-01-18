@@ -20,7 +20,9 @@
 <!--Секция с информацией о пользователе-->
       <section class="profile main-content__profile">
         <div class="profile__wrapper">
-          <img class="profile__avatar" src="<%=require('./images/Avatar.jpg')%>" alt='аватарка'>
+          <div class="profile__avatar-overlay">
+            <img class="profile__avatar" src="<%=require('./images/Avatar.jpg')%>" alt='аватарка'>
+          </div>
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__profession">Исследователь океана</p>
@@ -78,6 +80,32 @@
       </div>
     </div>
   
+  <!--попап для изменения аватара-->
+  <div class="popup popup_type_new-avatar">
+    <div class="popup__grid">
+      <button type="reset" class="popup__close-button" form="popup-form"><img class="popup__close-button-img" src="<%=require('./images/close-icon.svg')%>" alt="закрыть окно"></button>
+      <form class="popup__container" id="popup-form-new-card" autocomplete="on" name="popup-form">
+        <h2 class="popup__title">Обновить аватар</h2>
+        <fieldset class="popup__profile">
+          <input class="popup__input popup__input_name popup__input_new-avatar" type="url" placeholder="Ссылка на фото" name="name" id='new-avatar-link' required>
+          <span class='popup__input-error popup__input-error_active' id='new-avatar-name-error'></span>
+        </fieldset>
+        <button class="popup__submit-button">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <!--попап для удаления карточек-->
+    <div class="popup popup_type_delete-card">
+      <div class="popup__grid">
+        <button type="reset" class="popup__close-button"><img class="popup__close-button-img" src="<%=require('./images/close-icon.svg')%>" alt="закрыть окно"></button>
+        <div class="popup__container">
+          <h2 class="popup__title">Вы уверены?</h2>
+          <button class="popup__submit-button">Да</button>
+        </div>
+      </div>
+    </div>
+  
   <!--попап для показа увеличенного фото-->
     <div class="popup popup_type_image">
       <div class="popup__grid popup__grid_type_card">
@@ -94,7 +122,10 @@
         <img class="element__img">
         <div class="element__info">
           <h2 class="element__text"></h2>
-          <button class="element__like-button" type="button"></button>
+          <div class="element__like-element">
+            <button class="element__like-button" type="button"></button>
+            <p class="element__like-count"></p>
+          </div>
         </div>
       </li>
     </template>

@@ -5,13 +5,25 @@ class Section {
     this._container = document.querySelector(containerSelector);
   }
 
-  renderItems() {
-      this._items.forEach(item => {
-        this._renderer(item)});
+  removeCard() {
+    this._element.remove();
   }
 
-  addItem(element) {
+  renderItems(id) {
+      this._items.forEach(item => {
+        this._renderer(item, id)});
+  }
+
+  addItemRender(element) {
+    this._container.append(element);
+  }
+
+  addItemNewCard(element) {
     this._container.prepend(element);
+  }
+
+  setItems(items) {
+    this._items = items;
   }
 };
 

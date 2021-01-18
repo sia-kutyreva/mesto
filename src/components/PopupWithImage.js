@@ -8,7 +8,7 @@ class PopupWithImage extends Popup{
   }
 
   open(data) {
-    popupImage.src = data.info;
+    popupImage.src = data.link;
     popupImage.alt = data.name;
     popupImageTitle.textContent = data.name;
     super.open();
