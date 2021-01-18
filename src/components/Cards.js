@@ -33,6 +33,11 @@ class Card {
     this._element.querySelector('.element__like-button').classList.remove('element__liked');
   }
 
+  deleteCard() {
+    this._element.remove();
+    this._element = null;
+  }
+
   _countLikes() {
     if (this._likes > 0) {
       const arrayLikes = this._likesArray.map(function(item) {
